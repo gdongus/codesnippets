@@ -1,1 +1,1 @@
-SELECT fr FROM Foo fr  INNER JOIN fr.values vi  LEFT OUTER JOIN fr.values v  WHERE fr.form.id = :appId  AND v.field.id = :fieldId  AND (LOWER(vi.value) LIKE :textFilter OR fr.user.lastName LIKE :textFilter OR fr.user.firstName LIKE :textFilter)  ORDER BY v.value desc
+SELECT DISTINCT fr FROM FormResult fr  INNER JOIN fr.values vi  LEFT OUTER JOIN fr.values v  WHERE fr.form.id = :appId  AND v.field.id = :fieldId  AND (LOWER(vi.value) LIKE :textFilter OR fr.user.lastName LIKE :textFilter OR fr.user.firstName LIKE :textFilter)  ORDER BY v.value desc
